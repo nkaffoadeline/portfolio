@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Adeline Matho" description="About Adeline Matho">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/ad.jpg"
+					alt="Adeline Matho at a training"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						The full stack developer is a 
+						highly sought-after profile in the 
+						world of web development. Their versatility
+						 and technical skills allow them 
+						 to adapt to different work environments and take on varied challenges. If you are passionate about web development and like to solve problems, this job may be for you!
+					</p>
+					<br>
+					<p>
+						Front-end design: Creates the look and feel of the website 
+						using languages ​​like HTML, CSS, and JavaScript. They may also use frameworks like React, 
+						Angular, or Vue.js to structure their code.
+					</p>
+					<br>
+					<p>
+						Business logic development (back-end): He writes 
+						the code that manages data, calculations and interactions with the database. He uses languages ​​like Python, Ruby, Node.js or Java, 
+						and databases like MySQL, PostgreSQL or MongoDB.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>I am a student in the first year of a master's degree in information systems and software engineering, 
+						training at Objis in fullstack development.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<h5>Front-End Skills</h5>
+					<ul>
+						<li>HTML, CSS, JavaScript: The foundational languages for building web interfaces.</li>
+						<li>Front-end frameworks: React, Angular, Vue.js for efficient UI development.</li>
+						<li>Responsive design: Creating websites that adapt to different screen sizes.</li>
+						<li>UI/UX design: Understanding user experience and creating intuitive interfaces.</li>
+					</ul>
+					<h5>Backend-End Skills</h5>
+					<ul>
+						<li>Server-side languages: Python, Ruby, JavaScript (Node.js), Java, PHP, etc.</li>
+						<li>Databases: SQL (MySQL, PostgreSQL, etc.) and NoSQL (MongoDB, Cassandra, etc.).</li>
+						<li>APIs: Building and consuming RESTful and GraphQL APIs.</li>
+						<li>Server administration: Basic understanding of server setup and configuration.</li>
+					</ul>
+					<h5>Soft-Skills</h5>
+					<ul>
+						<li>Adaptability: Staying updated with the rapidly changing tech landscape.</li>
+						<li>Teamwork: Collaborating effectively with designers, other developers, and stakeholders.</li>
+						<li>Time management: Balancing multiple tasks and meeting deadlines.</li>
+						<li>Critical thinking: Analyzing problems and finding optimal solutions.</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
